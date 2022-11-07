@@ -22,17 +22,30 @@
 
 // SNACK1 // 
 
+const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
+const arrayNew = [];
 
+myArray.forEach((Element,index) => {
+    if (index >= 2 && index <= 4) {
+        arrayNew.push(Element);
 
+    }
 
+}
+)
 
+let array2 = myArray.filter((element,index) => {
+    if ( index >= 2 && index <= 4) {
+        return true;
 
+    } else {
+        return false;
+    }
+}
+)
 
-
-
-
-
-
+console.log(arrayNew);
+console.log(array2);
 
 
 // SNACK 2 //
