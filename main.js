@@ -55,6 +55,30 @@ const capLetters = students.map( (Element) => {
 
 console.log(capLetters)
 
+const marks = students.filter((Element) => {
+    if (Element.grades > 70) {
+        return true;
+
+    } else {
+        return false;
+    }
+})
+
+console.log(marks)
+
+const idGrades = students.filter((Element) => {
+    if( Element.grades > 70 && Element.id > 120){
+        return true;
+
+    } else {
+        return false;
+    }
+}
+)
+
+console.log(idGrades)
+
+
 
 
 
