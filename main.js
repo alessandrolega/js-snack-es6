@@ -103,35 +103,87 @@
 
 //SNACK 3 ESERCIZIO 2 //
 
-let limit = 100;
-let lowest;
+// let limit = 100;
+// let lowest;
 
-const bycicle = [
+// const bycicle = [
+//     {
+//         name: "mountainbike",
+//         weight: 10
+//     },
+//     {
+//         name: "enduro",
+//         weight: 7
+//     },
+//     {
+//         name: "graziella",
+//         weight: 12
+//     }
+// ];
+
+// console.log(bycicle)
+
+// for(let i = 0; i < bycicle.length; i++){
+//     let {name, weight} = bycicle[i];
+//     if( weight < limit){ 
+//         limit=weight;
+//         lowest = name;
+//     }
+// }
+
+// document.getElementById('bikeStamp').innerHTML = `la bici più leggera è ${lowest} e pesa ${limit}kg`;
+
+
+
+//SNACK 4 ESERCIZIO 2 //
+
+let pointsMaxvalue = 100;
+let foulsMaxvalue = 50;
+
+
+const teams = [
     {
-        name: "mountainbike",
-        weight: 10
+        name: "Juventus",
+        points: 0,
+        fouls: 0
     },
     {
-        name: "enduro",
-        weight: 7
+        name: "Inter",
+        points: 0,
+        fouls: 0
     },
     {
-        name: "graziella",
-        weight: 12
+        name: "Fiorentina",
+        points: 0,
+        fouls: 0
+    },
+    {
+        name: "Barcellona",
+        points: 0,
+        fouls: 0
     }
-];
 
-console.log(bycicle)
+]
 
-for(let i = 0; i < bycicle.length; i++){
-    let {name, weight} = bycicle[i];
-    if( weight < limit){ 
-        limit=weight;
-        lowest = name;
+console.log(teams)
+
+function randomNumber(){
+    for( i=0; i < teams.length; i++) {
+    let randomPoints = Math.round(Math.random() * pointsMaxvalue);
+    let randomFouls = Math.round(Math.random() * foulsMaxvalue);
+    teams[i].points = randomPoints;
+    teams[i].fouls = randomFouls;
     }
+    
 }
 
-document.getElementById('bikeStamp').innerHTML = `la bici più leggera è ${lowest} e pesa ${limit}kg`;
+
+randomNumber();
+console.log(teams)
+
+
+
+
 
 
 
