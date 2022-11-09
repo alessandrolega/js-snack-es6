@@ -20,76 +20,119 @@
 // 2-  Dobbiamo creare un nuovo array con gli studenti che hanno un totale di voti superiore a 70
 // 3-  Dobbiamo creare un nuovo array di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
 
+
+// Snack 3
+// Creare un array di oggetti: Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso. Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
+// Snack4
+// Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti. Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+// Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti. Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+
+
 // SNACK1 // 
 
-const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
-const arrayNew = [];
+// const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
+// const arrayNew = [];
 
-myArray.forEach((Element,index) => {
-    if (index >= 2 && index <= 4) {
-        arrayNew.push(Element);
+// myArray.forEach((Element,index) => {
+//     if (index >= 2 && index <= 4) {
+//         arrayNew.push(Element);
 
+//     }
+
+// }
+// )
+
+// let array2 = myArray.filter((element,index) => {
+//     if ( index >= 2 && index <= 4) {
+//         return true;
+
+//     } else {
+//         return false;
+//     }
+// }
+// )
+
+// console.log(arrayNew);
+// console.log(array2);
+
+
+// // SNACK 2 //
+
+// let students = [
+//     { name: 'Marco', id: 213, grades: 78 },
+//     { name: 'Paola', id: 110, grades: 96 },
+//     { name: 'Andrea', id: 250, grades: 48 },
+//     { name: 'Gaia', id: 145, grades: 74 },
+//     { name: 'Luigi', id: 196, grades: 68 },
+//     { name: 'Piero', id: 102, grades: 50 },
+//     { name: 'Francesca', id: 120, grades: 84 },
+// ];
+
+// const capLetters = students.map( (Element) => {
+//      letter = (Element.name).toUpperCase();
+//     return letter;
+// })
+
+
+// console.log(capLetters)
+
+// const marks = students.filter((Element) => {
+//     if (Element.grades > 70) {
+//         return true;
+
+//     } else {
+//         return false;
+//     }
+// })
+
+// console.log(marks)
+
+// const idGrades = students.filter((Element) => {
+//     if( Element.grades > 70 && Element.id > 120){
+//         return true;
+
+//     } else {
+//         return false;
+//     }
+// }
+// )
+
+// console.log(idGrades)
+
+
+//SNACK 3 ESERCIZIO 2 //
+
+let limit = 100;
+let lowest;
+
+const bycicle = [
+    {
+        name: "mountainbike",
+        weight: 10
+    },
+    {
+        name: "enduro",
+        weight: 7
+    },
+    {
+        name: "graziella",
+        weight: 12
     }
-
-}
-)
-
-let array2 = myArray.filter((element,index) => {
-    if ( index >= 2 && index <= 4) {
-        return true;
-
-    } else {
-        return false;
-    }
-}
-)
-
-console.log(arrayNew);
-console.log(array2);
-
-
-// SNACK 2 //
-
-let students = [
-    { name: 'Marco', id: 213, grades: 78 },
-    { name: 'Paola', id: 110, grades: 96 },
-    { name: 'Andrea', id: 250, grades: 48 },
-    { name: 'Gaia', id: 145, grades: 74 },
-    { name: 'Luigi', id: 196, grades: 68 },
-    { name: 'Piero', id: 102, grades: 50 },
-    { name: 'Francesca', id: 120, grades: 84 },
 ];
 
-const capLetters = students.map( (Element) => {
-     letter = (Element.name).toUpperCase();
-    return letter;
-})
+console.log(bycicle)
 
-
-console.log(capLetters)
-
-const marks = students.filter((Element) => {
-    if (Element.grades > 70) {
-        return true;
-
-    } else {
-        return false;
-    }
-})
-
-console.log(marks)
-
-const idGrades = students.filter((Element) => {
-    if( Element.grades > 70 && Element.id > 120){
-        return true;
-
-    } else {
-        return false;
+for(let i = 0; i < bycicle.length; i++){
+    let {name, weight} = bycicle[i];
+    if( weight < limit){ 
+        limit=weight;
+        lowest = name;
     }
 }
-)
 
-console.log(idGrades)
+document.getElementById('bikeStamp').innerHTML = `la bici più leggera è ${lowest} e pesa ${limit}kg`;
+
 
 
 
