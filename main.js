@@ -181,7 +181,11 @@ function randomNumber(){
 randomNumber();
 console.log(teams)
 
+let newArray = teams.map(({name, fouls})  => {
+    return {name, fouls}
+})
 
+console.log(newArray);
 
 
 
